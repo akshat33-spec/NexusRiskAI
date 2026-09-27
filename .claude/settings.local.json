@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(aws lambda *)",
+      "Bash(curl -X POST -H \"Content-Type: application/json\" -d '{\"text\": \"Invoice from Apple Inc. Total: $999. Date: October 20th.\"}' https://kdt90p4fqh.execute-api.us-east-1.amazonaws.com/prod/analyze)",
+      "Bash(zip -j lambda_function.zip lambda/index.js)",
+      "Bash(aws iam *)",
+      "Bash(aws bedrock-runtime *)",
+      "mcp__aws-mcp__aws___run_script",
+      "Bash(aws bedrock *)",
+      "Bash(curl -v -X POST -H \"Content-Type: application/json\" -d '{\"text\": \"Invoice from Apple Inc. Total: $999. Date: October 20th.\"}' https://kdt90p4fqh.execute-api.us-east-1.amazonaws.com/prod/analyze)"
+    ]
+  }
+}
