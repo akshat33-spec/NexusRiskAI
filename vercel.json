@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "backend/lambda_function.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "backend/lambda_function.py"
+    }
+  ]
+}
