@@ -8,7 +8,8 @@
       "Bash(aws bedrock-runtime *)",
       "mcp__aws-mcp__aws___run_script",
       "Bash(aws bedrock *)",
-      "Bash(curl -v -X POST -H \"Content-Type: application/json\" -d '{\"text\": \"Invoice from Apple Inc. Total: $999. Date: October 20th.\"}' https://kdt90p4fqh.execute-api.us-east-1.amazonaws.com/prod/analyze)"
+      "Bash(curl -v -X POST -H \"Content-Type: application/json\" -d '{\"text\": \"Invoice from Apple Inc. Total: $999. Date: October 20th.\"}' https://kdt90p4fqh.execute-api.us-east-1.amazonaws.com/prod/analyze)",
+      "Bash(rm 'aws-frontend/src/app/components/MapControls.tsx`')"
     ]
   }
 }

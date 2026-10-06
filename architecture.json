@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "NEXUS RISK AI System Architecture",
+    "output": "architecture.html"
+  },
+  "components": [
+    {
+      "id": "client",
+      "label": "User / Laptop",
+      "type": "frontend",
+      "pos": [40, 200],
+      "size": [140, 60]
+    },
+    {
+      "id": "frontend",
+      "label": "Next.js Frontend",
+      "type": "frontend",
+      "pos": [220, 200],
+      "size": [160, 60]
+    },
+    {
+      "id": "lambda",
+      "label": "AWS Lambda (Orchestrator)",
+      "type": "backend",
+      "pos": [430, 200],
+      "size": [190, 60]
+    },
+    {
+      "id": "news_api",
+      "label": "NewsAPI",
+      "type": "external",
+      "pos": [680, 50],
+      "size": [140, 50]
+    },
+    {
+      "id": "groq_ai",
+      "label": "Groq AI",
+      "type": "external",
+      "pos": [680, 150],
+      "size": [140, 50]
+    },
+    {
+      "id": "dynamodb",
+      "label": "AWS DynamoDB",
+      "type": "database",
+      "pos": [680, 250],
+      "size": [140, 50]
+    },
+    {
+      "id": "sns",
+      "label": "Amazon SNS",
+      "type": "cloud",
+      "pos": [680, 380],
+      "size": [140, 50]
+    },
+    {
+      "id": "user_email",
+      "label": "User Email",
+      "type": "external",
+      "pos": [890, 380],
+      "size": [130, 50]
+    }
+  ],
+  "connections": [
+    { "from": "client", "to": "frontend", "label": "HTTPS" },
+    { "from": "frontend", "to": "lambda", "label": "API Call" },
+    { "from": "lambda", "to": "news_api", "label": "Fetch News" },
+    { "from": "lambda", "to": "groq_ai", "label": "Reasoning" },
+    { "from": "lambda", "to": "dynamodb", "label": "Read / Write" },
+    { "from": "lambda", "to": "sns", "label": "Alert", "labelDy": -20 },
+    { "from": "sns", "to": "user_email", "label": "Email", "labelDy": -20 }
+  ]
+}
